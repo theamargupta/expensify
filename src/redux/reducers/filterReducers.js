@@ -8,11 +8,12 @@ const filtersReducerDefaultState = {
 };
 
 export default (state = filtersReducerDefaultState, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case 'SET_TEXT_FILTER':
       return {
         ...state,
-        text: action.text,
+        text: payload,
       };
     case 'SORT_BY_AMOUNT':
       return {
@@ -27,12 +28,12 @@ export default (state = filtersReducerDefaultState, action) => {
     case 'SET_START_DATE':
       return {
         ...state,
-        startDate: action.startDate,
+        startDate: payload,
       };
     case 'SET_END_DATE':
       return {
         ...state,
-        endDate: action.endDate,
+        endDate: payload,
       };
     default:
       return state;

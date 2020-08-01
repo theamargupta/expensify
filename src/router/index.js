@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../Components/Header';
 import ExpenseDashboard from '../container/ExpenseDashboardPage';
+import Home from '../container/Home';
 import AddExpense from '../container/AddExpensePage';
 import EditExpense from '../container/EditExpensePage';
 import Help from '../container/HelpPage';
@@ -11,6 +12,7 @@ const AppRouter = () => {
     <div>
       <Switch>
         <Route exact path='/' component={ExpenseDashboard} />
+        <Route exact path='/home' component={Home} />
         <Route path='/create' component={AddExpense} />
         <Route path='/edit' component={EditExpense} />
         <Route path='/help' component={Help} />

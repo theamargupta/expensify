@@ -1,7 +1,7 @@
 // SET_TEXT_FILTER
-export const setTextFilter = (text = '') => ({
+export const setTextFilter = (payload = '') => ({
   type: 'SET_TEXT_FILTER',
-  text,
+  payload,
 });
 
 // SORT_BY_DATE
@@ -15,13 +15,13 @@ export const sortByAmount = () => ({
 });
 
 // SET_START_DATE
-export const setStartDate = (startDate) => ({
+export const setStartDate = (payload) => ({
   type: 'SET_START_DATE',
-  startDate,
+  payload,
 });
 
 // SET_END_DATE
-export const setEndDate = (endDate) => ({
+export const setEndDate = (payload) => ({
   type: 'SET_END_DATE',
-  endDate,
+  payload,
 });
