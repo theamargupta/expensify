@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Header from '../Comp/Header';
-import ExpenseDashboard from '../Comp/ExpenseDashboardPage';
-import AddExpense from '../Comp/AddExpensePage';
-import EditExpense from '../Comp/EditExpensePage';
-import Help from '../Comp/HelpPage';
-import NotFound from '../Comp/NotFoundPage';
+import Header from '../Components/Header';
+import ExpenseDashboard from '../container/ExpenseDashboardPage';
+import AddExpense from '../container/AddExpensePage';
+import EditExpense from '../container/EditExpensePage';
+import Help from '../container/HelpPage';
+import NotFound from '../container/NotFoundPage';
 const AppRouter = () => {
   return (
     <div>
