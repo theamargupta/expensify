@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './app';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import configureStore from './Redux/store/configureStore';
+import configureStore from './Redux/store';
 import { addExpense } from './Redux/actions/expensesGenrators';
 import { setTextFilter } from './Redux/actions/filtersGenerators';
 import getVisibleExpenses from './Redux/selectors/expensesVisible';
