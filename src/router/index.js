@@ -1,24 +1,36 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Header from '../Components/Header';
-import ExpenseDashboard from '../container/ExpenseDashboardPage';
-import Home from '../container/Home';
-import AddExpense from '../container/AddExpensePage';
-import EditExpense from '../container/EditExpensePage';
-import Help from '../container/HelpPage';
-import NotFound from '../container/NotFoundPage';
+const ExpenseDashboard = React.lazy(() =>
+  import('../container/ExpenseDashboardPage')
+);
+const Sidebar = React.lazy(() => import('../Components/Sidebar'));
+const AddExpense = React.lazy(() => import('../container/AddExpensePage'));
+const EditExpense = React.lazy(() => import('../container/EditExpensePage'));
+const Help = React.lazy(() => import('../container/HelpPage'));
+const NotFound = React.lazy(() => import('../container/NotFoundPage'));
+
 const AppRouter = () => {
   return (
     <div>
       <Switch>
-        <Route exact path='/' component={ExpenseDashboard} />
-        <Route exact path='/home' component={Home} />
-        <Route path='/create' component={AddExpense} />
-        <Route path='/edit' component={EditExpense} />
-        <Route path='/help' component={Help} />
+        <Route
+          exact
+          path='/'
+          render={() => <Sidebar Render={ExpenseDashboard} />}
+        />
+        <Route
+          exact
+          path='/create'
+          render={() => <Sidebar Render={AddExpense} />}
+        />
+        <Route
+          exact
+          path='/edit'
+          render={() => <Sidebar Render={EditExpense} />}
+        />
+        <Route exact path='/help' render={() => <Sidebar Render={Help} />} />
         <Route component={NotFound} />
       </Switch>
-      <Header />
     </div>
   );
 };

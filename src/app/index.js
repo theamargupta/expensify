@@ -1,4 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import AppRoute from '../router';
+import Loader from '../Components/Loader';
 
-export default () => <AppRoute />;
+export default () => (
+  <Suspense fallback={<Loader />}>
+    <AppRoute />
+  </Suspense>
+);
